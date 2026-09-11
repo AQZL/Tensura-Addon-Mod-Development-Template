@@ -1,0 +1,128 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.neoforged.net/releases' }
+}
+
+neoForge {
+    version = project.neo_version
+
+    runs {
+        client {
+            client()
+        }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+        data {
+            data()
+            programArguments.addAll '--mod', project.mod_id, '--all',
+                    '--output', file('src/generated/resources').absolutePath,
+                    '--existing', file('src/main/resources').absolutePath
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
+    exclude '**/.cache/**', '**/.gitkeep'
+}
+
+// Only these six complete mods are loaded in development runs.
+def runtimeLibraries = [
+        "lib/tensura-neoforge-${tensura_version}.jar",
+        "lib/manascore-neoforge-${manascore_version}.jar",
+        "lib/architectury-${architectury_version}-neoforge.jar",
+        "lib/geckolib-neoforge-${minecraft_version}-${geckolib_version}.jar",
+        "lib/smartbrainlib-neoforge-${minecraft_version}-${smartbrainlib_version}.jar",
+        "lib/terrablender-neoforge-${minecraft_version}-${terrablender_version}.jar"
+]
+
+// javac cannot see classes inside nested JARs. These are extracted from the
+// SAME ManasCore aggregate above, and are deliberately absent from runtimeClasspath.
+def manascoreModules = [
+        'architectury', 'attribute', 'command', 'config', 'inventory',
+        'keybind', 'network', 'race', 'skill', 'storage'
+]
+def compileLibraries = manascoreModules.collect {
+    "lib/compile/manascore-${it}-neoforge-${manascore_version}.jar"
+}
+
+configurations {
+    localRuntime
+    runtimeClasspath.extendsFrom localRuntime
+}
+
+dependencies {
+    compileOnly files(runtimeLibraries)
+    compileOnly files(compileLibraries)
+    localRuntime files(runtimeLibraries)
+}
+
+def verifyLocalLibraries = tasks.register('verifyLocalLibraries') {
+    group = 'verification'
+    description = 'Check that all bundled Tensura development libraries exist.'
+    doLast {
+        def missing = (runtimeLibraries + compileLibraries).findAll { !file(it).isFile() }
+        if (!missing.isEmpty()) {
+            throw new GradleException('Missing development libraries:\n  ' +
+                    missing.join('\n  ') + '\nRestore lib/ from the template; see lib/README.md.')
+        }
+    }
+}
+
+tasks.named('compileJava') {
+    dependsOn verifyLocalLibraries
+}
+
+tasks.named('processResources', ProcessResources) {
+    def replacements = [
+            mod_id: mod_id, mod_name: mod_name, mod_version: mod_version,
+            mod_authors: mod_authors, mod_license: mod_license, mod_description: mod_description,
+            minecraft_version_range: minecraft_version_range,
+            neo_version_range: neo_version_range, loader_version_range: loader_version_range,
+            tensura_version_range: tensura_version_range,
+            manascore_version_range: manascore_version_range
+    ]
+    inputs.properties replacements
+    filteringCharset = 'UTF-8'
+    filesMatching(['META-INF/neoforge.mods.toml', 'pack.mcmeta']) {
+        expand replacements
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Jar).configureEach {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+    manifest.attributes(
+            'Implementation-Title': mod_name,
+            'Implementation-Version': mod_version
+    )
+}

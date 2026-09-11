@@ -1,0 +1,21 @@
+{
+  "tensura_addon.skill.example_resistance": "抗性技能示例",
+  "tensura_addon.skill.example_resistance.description": "",
+  "tensura_addon.skill.example_intrinsic": "内在技能示例",
+  "tensura_addon.skill.example_intrinsic.description": "",
+  "tensura_addon.skill.example_common": "普通技能示例",
+  "tensura_addon.skill.example_common.description": "",
+  "tensura_addon.skill.example_extra": "额外技能示例",
+  "tensura_addon.skill.example_extra.description": "",
+  "tensura_addon.skill.example_unique": "独特技能示例",
+  "tensura_addon.skill.example_unique.description": "",
+  "tensura_addon.skill.example_ultimate": "究极技能示例",
+  "tensura_addon.skill.example_ultimate.description": "",
+  "tensura_addon.race.example_race": "基础种族示例",
+  "tensura_addon.race.example_race.description": "",
+  "tensura_addon.race.example_evolved_race": "进化种族示例",
+  "tensura_addon.race.example_evolved_race.description": "",
+  "tensura_addon.skill.mode.default": "默认",
+  "tensura_addon.skill.mode.example_unique_speed": "加速",
+  "tensura_addon.skill.mode.example_unique_guard": "防护"
+}

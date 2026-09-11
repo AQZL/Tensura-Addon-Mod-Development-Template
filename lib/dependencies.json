@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "dependencies": [
+    {
+      "file": "lib/tensura-neoforge-2.0.0.1.jar",
+      "usage": "compileOnly + localRuntime",
+      "source": "Tensura_extras_1.21.1/lib/tensura-neoforge-2.0.0.1.jar",
+      "sha256": "01bacedcc3c9c36dba92e63ba2405588d93e153d6a1dee6915269eb2bd69102e"
+    },
+    {
+      "file": "lib/manascore-neoforge-4.0.0.0.jar",
+      "usage": "compileOnly + localRuntime",
+      "source": "Tensura_extras_1.21.1/lib/manascore-neoforge-4.0.0.0.jar",
+      "sha256": "5e76781edd95b18e457e0653e663da4f7bd6457aa0602f58caade2a2dcceca31"
+    },
+    {
+      "file": "lib/architectury-13.0.8-neoforge.jar",
+      "usage": "compileOnly + localRuntime",
+      "source": "Tensura_extras_1.21.1/lib/architectury-13.0.8-neoforge.jar",
+      "sha256": "5ec578f814e8cca87aeffa6e424032e78d9ea5ea6b603dd834c2dc13c31141ee"
+    },
+    {
+      "file": "lib/geckolib-neoforge-1.21.1-4.7.6.jar",
+      "usage": "compileOnly + localRuntime",
+      "source": "Tensura_extras_1.21.1/lib/geckolib-neoforge-1.21.1-4.7.6.jar",
+      "sha256": "2aba768ed522867530be455c45c4e1d24e675cca3955595409855a4eb91c3d79"
+    },
+    {
+      "file": "lib/smartbrainlib-neoforge-1.21.1-1.16.11.jar",
+      "usage": "compileOnly + localRuntime",
+      "source": "Tensura_extras_1.21.1/lib/smartbrainlib-neoforge.jar",
+      "sha256": "68036561cc5511766d54cc0deabc3fc3a5e68f9e3db2478f2574ec82b494374b"
+    },
+    {
+      "file": "lib/terrablender-neoforge-1.21.1-4.1.0.8.jar",
+      "usage": "compileOnly + localRuntime",
+      "source": "Tensura_extras_1.21.1/lib/terrablender-neoforge-1.21.1-4.1.0.8.jar",
+      "sha256": "edb34c388fe17ea88d0a7fd11174bbf8ae8f28a4c8ce886f1bf9a5cf0ebc36b8"
+    },
+    {
+      "file": "lib/compile/manascore-architectury-neoforge-4.0.0.0.jar",
+      "usage": "compileOnly; runtime provided inside aggregate ManasCore",
+      "source": "lib/manascore-neoforge-4.0.0.0.jar!/META-INF/jars/manascore-architectury-neoforge-4.0.0.0.jar",
+      "sha256": "0ed2a2d8a70765713d0ed4488e18501b7282f8f69f3ce057479ce001f9c63b33"
+    },
+    {
+      "file": "lib/compile/manascore-attribute-neoforge-4.0.0.0.jar",
+      "usage": "compileOnly; runtime provided inside aggregate ManasCore",
+      "source": "lib/manascore-neoforge-4.0.0.0.jar!/META-INF/jars/manascore-attribute-neoforge-4.0.0.0.jar",
+      "sha256": "3d9a22f9cfb9c3cdd412397931e6a1a84fda829e4a3a0365006fb4f2d8fcdacc"
+    },
+    {
+      "file": "lib/compile/manascore-command-neoforge-4.0.0.0.jar",
+      "usage": "compileOnly; runtime provided inside aggregate ManasCore",
+      "source": "lib/manascore-neoforge-4.0.0.0.jar!/META-INF/jars/manascore-command-neoforge-4.0.0.0.jar",
+      "sha256": "349dca31d248a8904a56a8fecb9ff6a4a61abc52803ce13f6462b23e2aad5f44"
+    },
+    {
+      "file": "lib/compile/manascore-config-neoforge-4.0.0.0.jar",
+      "usage": "compileOnly; runtime provided inside aggregate ManasCore",
+      "source": "lib/manascore-neoforge-4.0.0.0.jar!/META-INF/jars/manascore-config-neoforge-4.0.0.0.jar",
+      "sha256": "61ceddffea6d49d1a440b77aa4b0f8154c3b892ffc84fa2f39b6f4a685bec070"
+    },
+    {
+      "file": "lib/compile/manascore-inventory-neoforge-4.0.0.0.jar",
+      "usage": "compileOnly; runtime provided inside aggregate ManasCore",
+      "source": "lib/manascore-neoforge-4.0.0.0.jar!/META-INF/jars/manascore-inventory-neoforge-4.0.0.0.jar",
+      "sha256": "4eb3c3faebf05499b7c4a72bfe174a54a68e7c184ec3acdf85653d9fd2527707"
+    },
+    {
+      "file": "lib/compile/manascore-keybind-neoforge-4.0.0.0.jar",
+      "usage": "compileOnly; runtime provided inside aggregate ManasCore",
+      "source": "lib/manascore-neoforge-4.0.0.0.jar!/META-INF/jars/manascore-keybind-neoforge-4.0.0.0.jar",
+      "sha256": "f318be375b2f4455babbb663e4d6f4fcd67771ccd3b95f9980b505f79dc9d134"
+    },
+    {
+      "file": "lib/compile/manascore-network-neoforge-4.0.0.0.jar",
+      "usage": "compileOnly; runtime provided inside aggregate ManasCore",
+      "source": "lib/manascore-neoforge-4.0.0.0.jar!/META-INF/jars/manascore-network-neoforge-4.0.0.0.jar",
+      "sha256": "a276f641202bc6ef760ba626d1f1855f4ae9c929ff37e1d62a29f690799ee366"
+    },
+    {
+      "file": "lib/compile/manascore-race-neoforge-4.0.0.0.jar",
+      "usage": "compileOnly; runtime provided inside aggregate ManasCore",
+      "source": "lib/manascore-neoforge-4.0.0.0.jar!/META-INF/jars/manascore-race-neoforge-4.0.0.0.jar",
+      "sha256": "ad75b635f70940498a209dc436be9de3603043d08a8e7dc9d72541c9cfc12de4"
+    },
+    {
+      "file": "lib/compile/manascore-skill-neoforge-4.0.0.0.jar",
+      "usage": "compileOnly; runtime provided inside aggregate ManasCore",
+      "source": "lib/manascore-neoforge-4.0.0.0.jar!/META-INF/jars/manascore-skill-neoforge-4.0.0.0.jar",
+      "sha256": "e0f7a9b2ecc46bda5b354ede7c694368458c756197effd122cbd2bd4b7cac340"
+    },
+    {
+      "file": "lib/compile/manascore-storage-neoforge-4.0.0.0.jar",
+      "usage": "compileOnly; runtime provided inside aggregate ManasCore",
+      "source": "lib/manascore-neoforge-4.0.0.0.jar!/META-INF/jars/manascore-storage-neoforge-4.0.0.0.jar",
+      "sha256": "cc5b96435a7e64ad0a41e85948b6383f2b58cbe8d2de714f6c4d7c9b37046e2b"
+    }
+  ]
+}

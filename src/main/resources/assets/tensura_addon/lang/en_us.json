@@ -1,0 +1,21 @@
+{
+  "tensura_addon.skill.example_resistance": "Resistance Skill Example",
+  "tensura_addon.skill.example_resistance.description": "",
+  "tensura_addon.skill.example_intrinsic": "Intrinsic Skill Example",
+  "tensura_addon.skill.example_intrinsic.description": "",
+  "tensura_addon.skill.example_common": "Common Skill Example",
+  "tensura_addon.skill.example_common.description": "",
+  "tensura_addon.skill.example_extra": "Extra Skill Example",
+  "tensura_addon.skill.example_extra.description": "",
+  "tensura_addon.skill.example_unique": "Unique Skill Example",
+  "tensura_addon.skill.example_unique.description": "",
+  "tensura_addon.skill.example_ultimate": "Ultimate Skill Example",
+  "tensura_addon.skill.example_ultimate.description": "",
+  "tensura_addon.race.example_race": "Base Race Example",
+  "tensura_addon.race.example_race.description": "",
+  "tensura_addon.race.example_evolved_race": "Evolved Race Example",
+  "tensura_addon.race.example_evolved_race.description": "",
+  "tensura_addon.skill.mode.default": "Default",
+  "tensura_addon.skill.mode.example_unique_speed": "Speed",
+  "tensura_addon.skill.mode.example_unique_guard": "Guard"
+}
